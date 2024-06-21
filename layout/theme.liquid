@@ -11,8 +11,23 @@
     <!-- Header hook for plugins -->
     {{ 'application.css' | asset_url | stylesheet_tag }}
     {{ 'application.js' | asset_url | script_tag }}
+
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
   <body>
+    <div
+      class="fixed right-0 bottom-0 top-80 w-auto z-100 leading-0"
+      x-show="!menuOpen"
+    >
+      <a
+        href="https://info.givecampus.com/schedule"
+        target="_blank"
+        class="c-button bg-gradient-to-r from-[#fabe50] to-[#ff9111] font-bold uppercase group appearance-none inline-block rounded-none p-5 rotate-180 vertical-rl"
+      >
+        <span class="tracking-widest">Schedule a Demo</span></a
+      >
+    </div>
+    {% section 'header' %}
     <main role="main">
       {{ content_for_layout }}
     </main>
