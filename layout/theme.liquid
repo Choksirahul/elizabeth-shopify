@@ -28,8 +28,35 @@
       >
     </div>
     {% section 'header' %}
+    <!-- Add this to your theme.liquid or the relevant template file -->
+    <div id="embed-popup" class="embed-popup">
+      <div class="embed-popup-content">
+        <span class="close-button" onclick="closePopup()">&times;</span>
+        <p>Your Embed Code:</p>
+
+        <iframe
+          width="610px"
+          height="560px"
+          src="https://crm.zoho.com/crm/WebFormServeServlet?rid=5f2d5a8130968b27541733c96a2fbbb75735016da04641ca397d115a3a10af15abc59594564dd3d6abd09a0e53f7f0f7gid707b2c05e270723fada98b2773383fb43561c9c49a49d7fa4991c6ce06212acc"
+        >
+        </iframe>
+      </div>
+    </div>
     <main role="main">
       {{ content_for_layout }}
     </main>
+
+    <script>
+      /* Include the JavaScript here if not in a separate file */
+      document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+          document.getElementById('embed-popup').style.display = 'block';
+        }, 3000); // 3000 milliseconds = 3 seconds
+      });
+
+      function closePopup() {
+        document.getElementById('embed-popup').style.display = 'none';
+      }
+    </script>
   </body>
 </html>

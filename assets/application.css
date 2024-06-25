@@ -583,14 +583,6 @@ video {
   top: 0px;
 }
 
-.top-44 {
-  top: 11rem;
-}
-
-.top-56 {
-  top: 14rem;
-}
-
 .top-80 {
   top: 20rem;
 }
@@ -639,6 +631,10 @@ video {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.block {
+  display: block;
 }
 
 .inline-block {
@@ -800,30 +796,10 @@ video {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
-.from-yellow-500 {
-  --tw-gradient-from: #eab308 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(234 179 8 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.from-\[\'\#fabe50\'\] {
-  --tw-gradient-from: '#fabe50' var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .from-\[\#fabe50\] {
   --tw-gradient-from: #fabe50 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(250 190 80 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.to-yellow-900 {
-  --tw-gradient-to: #713f12 var(--tw-gradient-to-position);
-}
-
-.to-\[\'\#ff9111\'\] {
-  --tw-gradient-to: '#ff9111' var(--tw-gradient-to-position);
 }
 
 .to-\[\#ff9111\] {
@@ -939,6 +915,53 @@ video {
 
 .vertical-rl {
   writing-mode: vertical-rl;
+}
+
+/* Add this to your theme's CSS file */
+
+.embed-popup {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Black background with opacity */
+}
+
+.embed-popup-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 650px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
 }
 
 .hover\:bg-gray-100:hover {
