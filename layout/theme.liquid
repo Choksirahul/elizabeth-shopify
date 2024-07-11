@@ -28,7 +28,10 @@
     </main>
 
     {% if customer %}
-      <p>Welcome, {{ customer.email }}!</p>
+      <p>
+        Welcome {{ customer.first_name }}
+        {{ customer.last_name }}, {{ customer.email }}!
+      </p>
     {% else %}
       <p>Welcome, Guest!</p>
     {% endif %}
