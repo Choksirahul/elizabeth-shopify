@@ -27,6 +27,12 @@
       {{ content_for_layout }}
     </main>
 
+    {% if customer %}
+      <p>Welcome, {{ customer.email }}!</p>
+    {% else %}
+      <p>Welcome, Guest!</p>
+    {% endif %}
+
     <a href="https://shopify-b2c-login.onrender.com/auth" class="btn">Login with Azure B2C</a>
   </body>
 </html>
