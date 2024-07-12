@@ -37,23 +37,5 @@
     {% endif %}
 
     {% comment %} <a href="https://shopify-b2c-login.onrender.com/auth" class="btn">Login with Azure B2C</a> {% endcomment %}
-
-    <script>
-      function clearClientSideData() {
-        // Clear local storage
-        localStorage.clear();
-        // Clear session storage
-        sessionStorage.clear();
-        // Clear cookies (if necessary)
-        document.cookie.split(';').forEach((cookie) => {
-          document.cookie = cookie
-            .replace(/^ +/, '')
-            .replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
-        });
-      }
-
-      // Call the function to clear client-side data on page load
-      {% comment %} clearClientSideData(); {% endcomment %}
-    </script>
   </body>
 </html>
