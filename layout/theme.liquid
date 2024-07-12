@@ -37,5 +37,12 @@
     {% endif %}
 
     {% comment %} <a href="https://shopify-b2c-login.onrender.com/auth" class="btn">Login with Azure B2C</a> {% endcomment %}
+    <script>
+      function clearCookies() {
+        document.cookie.split(';').forEach((c) => {
+          document.cookie = c.trim().split('=')[0] + '=; expires=new Date().toISOString(); path=/';
+        });
+      }
+    </script>
   </body>
 </html>
