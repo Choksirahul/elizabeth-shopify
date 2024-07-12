@@ -38,28 +38,22 @@
 
     {% comment %} <a href="https://shopify-b2c-login.onrender.com/auth" class="btn">Login with Azure B2C</a> {% endcomment %}
 
-    {% comment %}
-      <script>
-        document.getElementById('shopify-logout').addEventListener('click', function (event) {
-          event.preventDefault();
-          var shopifyLogoutUrl = this.href;
-          var azureB2CLogoutUrl =
-            'https://keeprdev.b2clogin.com/keeprdev.onmicrosoft.com/oauth2/v2.0/logout?p=B2C_1_SignUpSignIn&post_logout_redirect_uri=https://shopify-b2c-login.onrender.com/auth/callback';
-
-          // Log out from Shopify and then redirect to Azure AD B2C logout
-          fetch(shopifyLogoutUrl, {
-            method: 'GET',
-            credentials: 'same-origin',
-          })
-            .then(function (response) {
-              window.location.href = azureB2CLogoutUrl;
-            })
-            .catch(function (error) {
-              console.error('Error logging out from Shopify:', error);
-              window.location.href = azureB2CLogoutUrl; // Redirect to Azure B2C logout even if Shopify logout fails
-            });
+    <script>
+      function clearClientSideData() {
+        // Clear local storage
+        localStorage.clear();
+        // Clear session storage
+        sessionStorage.clear();
+        // Clear cookies (if necessary)
+        document.cookie.split(';').forEach((cookie) => {
+          document.cookie = cookie
+            .replace(/^ +/, '')
+            .replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
         });
-      </script>
-    {% endcomment %}
+      }
+
+      // Call the function to clear client-side data on page load
+      {% comment %} clearClientSideData(); {% endcomment %}
+    </script>
   </body>
 </html>
